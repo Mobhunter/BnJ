@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<title>B`n`J personal cabinet</title>
+	<meta encoding="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="{% static "/account/css/styles_for_pec.css" %}">
+</head>
+<body>
+{% include "header.html" %}
+<main class="container">
+	<aside class="short-user-data">
+		<table class="short-user-data-table">
+			<tr class="genre">
+				<td class="property">Жанры:</td><td class="value" id="genre-list"></td>
+			</tr>
+			<tr class="instruments"> 
+				<td class="property">Инструменты:</td><td class="value" id="instruments-list"></td>
+			</tr>
+			<tr class="favourite-bands">
+				<td class="property">Любимые группы:</td><td class="value" id="favourite-bands-list"></td>
+			</tr>
+			<tr class="songs property">
+				<td class="property">Репертуар:</td><td class="songs-list-td value">
+					<input type="text" name="rep_search" placeholder="Поиск" id="rep_search">
+						<ul id="songs-list"></ul>
+				</td>
+			</tr>
+		</table>
+	</aside>
+	<article class="main-info">
+		<section class="post-creator">
+				<textarea placeholder="Новая запись" rows="2" noscroll="true"></textarea>
+				<button class="add-file audio" style="visibility: hidden;"></button>
+			<button class="submit" >опубликовать</button>
+		</section>
+		<section class="main-info-adder"></section>
+	</article>
+</main>
+</body>
+{% include "csrf.html" %}
+<script type="text/javascript" src="{% static "/base/jquery-3.6.0.js" %}""></script>
+<script type="text/javascript" src="{% static "/account/js/pc2.js" %}"></script>
+</html>

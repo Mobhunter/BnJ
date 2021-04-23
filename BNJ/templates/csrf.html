@@ -1,0 +1,13 @@
+{% csrf_token %}
+<script>
+	const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+	let remain_online_url = new URL(window.location.origin + "/api/account/remain_online");
+	setInterval(() => $.ajax({ 
+		url: remain_online_url.href, 
+		dataType: "json", 
+		method: "GET", 
+		headers: {'X-CSRFToken': csrftoken},
+		}).done(function(data) {
+			console.log(data)
+		}), 15000);
+</script>

@@ -1,0 +1,85 @@
+/*полиграфия*/
+html:root{
+	font-size: 1.25vmax;
+}
+html, body{
+	margin: 0px;
+	padding: 0px;
+	background-color: lightgrey;
+}
+body::-webkit-scrollbar,.post-creator>textarea::-webkit-scrollbar  {
+  width: 0;
+}
+/*полиграфия*/
+/*шапка*/
+header{
+	z-index: 2;
+	position: relative;
+	background-color: white;
+	position: sticky;
+	top: 0px;
+}
+header img{
+	height: 4vmax;
+	width:  4vmax;
+	border-radius: 50%;
+	border: none;
+}
+ul.user_header{
+	margin:0px; 
+	padding:0px;
+	list-style: none;
+	border-bottom: 0.01rem solid black;
+}
+ul.user_header>li{
+	margin: 0.5rem 0rem 0.5rem 1rem;
+	display: inline-block;
+	vertical-align: middle;
+}
+header ul.user_header>li:last-child{
+	position: absolute;
+	right: 0px;
+	margin-top:0px; 
+}
+/*выпадающее меню*/
+header ul.side-bar-options{
+	list-style: none;
+}
+header details[open] summary:focus, summary:focus{
+	outline: 0;
+    outline: none;
+}
+header summary::marker{
+	content :"\2630";
+	font-size: 3vmax;
+}
+header summary{
+	text-align: right;
+	cursor:pointer;
+}
+header details[open]>ul.side-bar-options>li{
+	text-align: center;
+	border-bottom: 0.1rem solid white;
+	padding: 0.25rem;
+}
+header details[open]>ul{
+	background-color: lightgrey;
+	padding: 0px;
+	cursor: pointer;
+	overflow: hidden;
+	box-sizing: border-box;
+	width: 15rem;
+	margin-top:1.3rem;
+}
+header details[open]{
+	background-color: white;
+	height: 100vh;
+	border-left:0.1rem solid black;
+}
+header details[open] ul a{
+	text-decoration:none;
+	color: black;
+	display: inline-block;
+	width: 100%;
+}
+/*выпадающее меню*/

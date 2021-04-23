@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Peer</title>
+   <script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+   {% load static %}
+</head>
+<body>
+	<p><h3>Мой ID: </h3><span id=myid ></span></p>
+	<input id=otherPeerId type=text placeholder="otherPeerId" > <button onclick="callToNode(document.getElementById('otherPeerId').value)">Вызов</button>
+	
+	<br>
+	<div id=callinfo></div>
+	<audio id=remAudio></audio>
+    <script src="{% static "call/js/peerjs_call.js" %}">
+
+</script>
+</body>

@@ -1,0 +1,8 @@
+{{f.label}}<br>{{ f }}<br>
+{% if f.errors %}
+<ul>
+{% for error in f.errors %}
+    <li>{{ error }}</li>
+{% endfor %}
+</ul>
+{% endif %}

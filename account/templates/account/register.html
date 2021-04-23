@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>B`n`J registration</title>
+	<meta encoding="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="{% static 'account/css/styles_for_reg.css' %}">
+</head>
+<body style="background: url('{% static "account/img/reg_bg.jpeg" %}');">
+	<header>
+		<ul>
+			<li><img src="{% static 'account/img/logo.jpeg' %}"></li>
+			<li><h1>Battle `n` Jam</h1></li>
+		</ul>
+	</header>
+	<main>
+		<p>
+			<h2>Приветствуем тебя, музыкант!</h2>
+			Добро пожаловать в семью Battle `n` Jam<br>
+			Заполни форму ниже и начни играть
+		</p>
+		{%if form.not_field_errors %}
+		<ul>
+		{% for error in form.not_field_errors %}
+			<li>{{ error }}</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+		<form action="{% url 'account:register' %}" enctype="multipart/form-data" method="POST" target="self" name="registration_form" autocomplete="off">
+			{% csrf_token %}
+			<section class="server-data">
+				{% include 'account/field.html' with f=form.email %}
+				{% include 'account/field.html' with f=form.username %}
+				{% include 'account/field.html' with f=form.password %}
+				{% include 'account/field.html' with f=form.password1 %}
+				{% include 'account/field.html' with f=form.age %}
+			</section>
+			<section class="genre">
+				Жанр(возможен выбор нескольких опций)
+				<details>
+					<summary>Джаз</summary>
+					{% include 'account/bool_field.html' with f=form.Avant_garde_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Afro_Cuban_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Bebop %}
+					{% include 'account/bool_field.html' with f=form.Bossanova %}
+					{% include 'account/bool_field.html' with f=form.Jazz_Manush %}
+					{% include 'account/bool_field.html' with f=form.Jazz_Rap %}
+					{% include 'account/bool_field.html' with f=form.Jazz_Funk %}
+					{% include 'account/bool_field.html' with f=form.Jazz_Fusion %}
+					{% include 'account/bool_field.html' with f=form.Dixieland %}
+					{% include 'account/bool_field.html' with f=form.Cool_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Latin_American_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Modal_Jazz %}
+					{% include 'account/bool_field.html' with f=form.New_Orleans_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Nu_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Punk_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Postbop %}
+					{% include 'account/bool_field.html' with f=form.Swing %}
+					{% include 'account/bool_field.html' with f=form.Ska_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Smooth_jazz %}
+					{% include 'account/bool_field.html' with f=form.Soul_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Stride %}
+					{% include 'account/bool_field.html' with f=form.Free_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Hard_Bop %}
+					{% include 'account/bool_field.html' with f=form.Jazz_Fusion %}
+					{% include 'account/bool_field.html' with f=form.Chicago_Jazz %}
+					{% include 'account/bool_field.html' with f=form.Acid_Jazz %}
+				</details>
+				<details>
+					<summary>Рок</summary>
+					{% include 'account/bool_field.html' with f=form.Alternative_rock %}
+					{% include 'account/bool_field.html' with f=form.Alternative_rock %}
+					{% include 'account/bool_field.html' with f=form.Beat %}
+					{% include 'account/bool_field.html' with f=form.Garage_Rock %}
+					{% include 'account/bool_field.html' with f=form.Glam_Rock %}
+					{% include 'account/bool_field.html' with f=form.Gothic_Rock %}
+					{% include 'account/bool_field.html' with f=form.Grunge %}
+					{% include 'account/bool_field.html' with f=form.Indie_Rock %}
+					{% include 'account/bool_field.html' with f=form.Instrumental_Rock %}
+					{% include 'account/bool_field.html' with f=form.Math_rock %}
+					{% include 'account/bool_field.html' with f=form.Noise_rock %}
+					{% include 'account/bool_field.html' with f=form.Pub_rock %}
+					{% include 'account/bool_field.html' with f=form.Punk_rock %}
+					{% include 'account/bool_field.html' with f=form.Post_punk %}
+					{% include 'account/bool_field.html' with f=form.Proto_punk %}
+					{% include 'account/bool_field.html' with f=form.Psychedelic_rock %}
+					{% include 'account/bool_field.html' with f=form.Southern_Rock %}
+					{% include 'account/bool_field.html' with f=form.Surf_Rock %}
+					{% include 'account/bool_field.html' with f=form.Soft_Rock %}
+					{% include 'account/bool_field.html' with f=form.Space_Rock %}
+					{% include 'account/bool_field.html' with f=form.Stoner_Rock %}
+					{% include 'account/bool_field.html' with f=form.Folk_Rock %}
+					{% include 'account/bool_field.html' with f=form.Hard_Rock %}
+					{% include 'account/bool_field.html' with f=form.Heartland_Rock %}
+					{% include 'account/bool_field.html' with f=form.Experimental_Rock %}
+					{% include 'account/bool_field.html' with f=form.Christian_Rock %}
+				</details>
+				<details>
+					<summary>Металл</summary>
+					{% include 'account/bool_field.html' with f=form.VanguardMetal %}
+					{% include 'account/bool_field.html' with f=form.BlackMetal %}
+					{% include 'account/bool_field.html' with f=form.Viking_metal %}
+					{% include 'account/bool_field.html' with f=form.Glam_metal %}
+					{% include 'account/bool_field.html' with f=form.Gothic_metal %}
+					{% include 'account/bool_field.html' with f=form.Groove_meta %}
+					{% include 'account/bool_field.html' with f=form.Dark_metal %}
+					{% include 'account/bool_field.html' with f=form.Doom_metal %}
+					{% include 'account/bool_field.html' with f=form.Death_metal %}
+					{% include 'account/bool_field.html' with f=form.CelticMetal %}
+					{% include 'account/bool_field.html' with f=form.Mat_metal %}
+					{% include 'account/bool_field.html' with f=form.Neoclassical_metal %}
+					{% include 'account/bool_field.html' with f=form.OrientalMetal %}
+					{% include 'account/bool_field.html' with f=form.PowerMetal %}
+					{% include 'account/bool_field.html' with f=form.PaganMetal %}
+					{% include 'account/bool_field.html' with f=form.Post_metal %}
+					{% include 'account/bool_field.html' with f=form.Progressive_metal %}
+					{% include 'account/bool_field.html' with f=form.Symphonic_metal %}
+					{% include 'account/bool_field.html' with f=form.SludgeMetal %}
+					{% include 'account/bool_field.html' with f=form.Speed_metal %}
+					{% include 'account/bool_field.html' with f=form.StonerMetal %}
+					{% include 'account/bool_field.html' with f=form.Thrash_metal %}
+					{% include 'account/bool_field.html' with f=form.Thrash_metal %}
+					{% include 'account/bool_field.html' with f=form.Heavy_metal %}
+				</details>
+				<details>
+					<summary>Блюз</summary>
+					{% include 'account/bool_field.html' with f=form.Delta_Blues %}
+					{% include 'account/bool_field.html' with f=form.Electric_Blues %}
+					{% include 'account/bool_field.html' with f=form.Chicago_Blues %}
+					{% include 'account/bool_field.html' with f=form.Texas_Blues %}
+					{% include 'account/bool_field.html' with f=form.Country_Blues %}
+				</details>
+				<details>
+					<summary>Поп</summary>
+					{% include 'account/bool_field.html' with f=form.Europop %}
+					{% include 'account/bool_field.html' with f=form.Dance_pop %}
+					{% include 'account/bool_field.html' with f=form.Electropop %}
+					{% include 'account/bool_field.html' with f=form.Mashup %}
+					{% include 'account/bool_field.html' with f=form.Operatic_pop %}
+					{% include 'account/bool_field.html' with f=form.Sophisti_pop %}
+					{% include 'account/bool_field.html' with f=form.Space_age_pop %}
+					{% include 'account/bool_field.html' with f=form.Sunshine_pop %}
+					{% include 'account/bool_field.html' with f=form.Tin_pop %}
+					{% include 'account/bool_field.html' with f=form.Traditional_pop_music %}
+					{% include 'account/bool_field.html' with f=form.J_pop %}
+					{% include 'account/bool_field.html' with f=form.K_pop %}
+					{% include 'account/bool_field.html' with f=form.C_pop %}
+					{% include 'account/bool_field.html' with f=form.Q_pop %}
+					{% include 'account/bool_field.html' with f=form.Mandopop %}
+				</details>
+			</section>
+			<section class="instrument">
+				{% include 'account/bool_field.html' with f=form.solo_guitar_tool %}
+				{% include 'account/bool_field.html' with f=form.rythm_guitar_tool %}
+				{% include 'account/bool_field.html' with f=form.guitar_tool %}
+				{% include 'account/bool_field.html' with f=form.bass_tool  %}
+				{% include 'account/bool_field.html' with f=form.vocals_tool %}
+				{% include 'account/bool_field.html' with f=form.drums_tool %}
+			</section>
+			<input type="submit" value="Отправить">
+		</form>
+	</main>
+</body>
+</html>

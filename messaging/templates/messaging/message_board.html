@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta encoding="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="{%static "messaging/css/styles_for_message_board.css"%}">
+</head>
+<body>
+<header>
+	{% include "header.html" %}
+</header>	
+	<main class="container">
+		<section class="search_bar">
+			<input type="text" name="search_bar" placeholder="Введите имя пользователя">
+		</section>
+		<section class="chats"></section>
+	</main>
+</body>
+	<script type="text/javascript" src="{% static "base/jquery-3.6.0.js"%}"></script>
+	{% include "csrf.html" %}
+	<script type="text/javascript" src="{% static "messaging/js/mb.js" %}" ></script>
+</html>

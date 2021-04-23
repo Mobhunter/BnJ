@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	{% load static %}
+	<head>
+		<title>B`n`J log in</title>
+		<meta encoding="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" type="text/css" href="{% static "account/css/styles_for_reg_and_log.css" %}">
+	</head>
+	<body style="background: url('{% static "account/img/reg_bg.jpeg" %}');">
+		<header>
+		<ul>
+			<li><h1>Battle `n` Jam</h1></li>
+		</ul>
+		</header>
+		<main>
+			<h2>С возвращением, музыкант!</h2>
+			<p>
+				Bведи логин и пароль для входа в аккаунт.
+			</p>
+			{%if form.not_field_errors %}
+			<ul>
+			{% for error in form.not_field_errors %}
+				<li>{{ error }}</li>
+			{% endfor %}
+			</ul>
+			{% endif %}
+			<form action="{% url 'account:login' %}" enctype="multipart/form-data" method="POST" target="self" name="log_in" autocomplete="on">
+				<section class="server-data">		
+					{% include 'account/field.html' with f=form.username %}
+					{% include 'account/field.html' with f=form.password %}
+					{% include 'account/bool_field.html' with f=form.remember_me %}
+				</section>
+				{%csrf_token%}
+				<input type="submit" value="Войти" style="padding: 0.1em 0.4em">
+			</form>
+		</main>
+	</body>
+</html>

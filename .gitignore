@@ -1,0 +1,10 @@
+static/
+!static/base
+.vscode/
+venv/
+__pycache__/
+*/__pycache__/
+*/migrations/
+media/
+CA/
+!media/base
