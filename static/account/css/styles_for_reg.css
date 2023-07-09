@@ -1,0 +1,109 @@
+/*полиграфия*/
+main{
+	background-color: white;
+	box-sizing:border-box;
+	width: 80%;
+	border: 0.1em solid black;
+	border-radius: 1em;
+	margin: 0px auto 5%;
+	opacity: 0.85;
+}
+body{
+	margin: 0px;
+	text-align: center;
+	font-size: 2vmax;
+}
+/*Заголовок*/
+header{
+	width: 99%;
+	box-sizing: border-box;
+	margin: 0.5em auto 1em;
+	border-radius: 1em;
+	padding: 0.5em 0px;
+	background-color:white ;
+	opacity: 0.85;
+}
+header p,img{
+	vertical-align: middle;
+}
+/*Заголовок*/
+h2{
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+}
+p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+section{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+/*полиграфия*/
+
+/*стили изображения*/
+ul{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	display: inline;
+}
+li>h1{
+	display: inline;
+}
+img{
+	height: 7vmax;
+	width:  7vmax;
+	border-radius: 50%;
+	border: solid black 0.1vmax;
+}
+header::after{
+	clear: both;
+	content: "";
+	visibility: hidden;
+	display: block;
+}
+
+/*стили изображения*/
+
+/*стили формы*/
+input{
+	margin-bottom: 0.5em;
+	margin-top: 0px;
+	font-size: 1em;
+}
+details:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+details summary::-webkit-details-marker {
+  display: none
+}
+details {
+	cursor: pointer;
+    outline: 0;
+    outline-offset: 0;
+}
+summary::before{
+	content: "\266B";
+}
+section.genre{
+	width: 40%;
+	margin: 0px auto;
+}
+section.instrument{
+	width: 40%;
+	margin: 0px auto;
+	text-align: left;
+}
+details[open] {
+	text-align: left;
+}
+details[open]>summary{
+	text-align: center;
+}
+details[open]>summary.pop::after{
+}
+/*стили формы*/

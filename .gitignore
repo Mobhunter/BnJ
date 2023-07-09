@@ -1,5 +1,3 @@
-static/
-!static/base
 .vscode/
 venv/
 __pycache__/
